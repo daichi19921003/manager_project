@@ -14,7 +14,6 @@ class CustomLoginView(TemplateView):
     #    if self.request.user.is_authenticated():
     #        return redirect(self.get_next_redirect_url())
     #    else:
-    # テスト
             kwargs = {'template_name': 'login.html'}
             return login(self.request, *args, **kwargs)
 
