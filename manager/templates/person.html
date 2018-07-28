@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Worker List{% endblock %}
+{% load staticfiles %}
+
+  {% block body %}
+  <div id="wrapper">
+    <div id="page-wrapper">
+      <div class="row">
+        <div class="col-lg-6 full-width margin-top-20percent" >
+          <div class="panel panel-default full-width">
+
+            <div class="panel-heading">
+              Edit Help
+            </div>
+            <div>
+               <a href="{% url 'manager:hello_if' %}">if</a><br>
+               <a href="{% url 'manager:hello_for' %}">for</a><br>
+               <a href="{% url 'manager:hello_forms' %}">forms</a><br>
+               <a href="{% url 'manager:hello_get_query' %}">query</a><br>
+               <a href="{% url 'manager:hello_forms_second' %}">forms_second</a><br>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

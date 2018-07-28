@@ -27,7 +27,7 @@
                     {% for worker in workers %}
                       <tr>
                         <td>{{worker.id}}</td>
-                        <td>{{worker.person.name}}</td>
+                        <td><a href="{% url 'manager:index' %}">{{worker.person.name}}</a></td>
                         <td>{{worker.person.sex}}</td>
                         <td>{{worker.person.birthday}}</td>
                       </tr>

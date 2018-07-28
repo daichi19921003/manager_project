@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Worker List{% endblock %}
+{% load staticfiles %}
+
+  {% block body %}
+  <div id="wrapper">
+    <div id="page-wrapper">
+      <div class="row">
+        <div class="col-lg-6 full-width margin-top-20percent" >
+          <div class="panel panel-default full-width">
+
+            <div class="panel-heading">
+              Edit Help
+            </div>
+            <div>
+              {% for idx in objects %}
+                  {{ idx }}<br>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

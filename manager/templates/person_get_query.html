@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block title %}Worker List{% endblock %}
+{% load staticfiles %}
+
+  {% block body %}
+  <div id="wrapper">
+    <div id="page-wrapper">
+      <div class="row">
+        <div class="col-lg-6 full-width margin-top-20percent" >
+          <div class="panel panel-default full-width">
+
+            <div class="panel-heading">
+              Edit Help
+            </div>
+            <div>
+              <form action="" method="get">
+              <label>名前:<input type="text" size="20" name="your_name"></label>
+              <input type="submit" value="送信">
+              </form>
+              {% if your_name %}
+                {{ your_name }}さん、こんにちは。
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

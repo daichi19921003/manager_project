@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block title %}Worker List{% endblock %}
+{% load staticfiles %}
+
+  {% block body %}
+  <div id="wrapper">
+    <div id="page-wrapper">
+      <div class="row">
+        <div class="col-lg-6 full-width margin-top-20percent" >
+          <div class="panel panel-default full-width">
+
+            <div class="panel-heading">
+              Edit Help
+            </div>
+            <div>
+              {% if is_visible %}
+              is_visibleがTrueなので表示します。<br>
+              {% else %}
+              is_visibleがFalseなので表示します。<br>
+              {% endif %}
+
+              {% if empty_str|length > 0 %}
+              empty_strの文字数は{{ empty_str|length }}です。
+              {% else %}
+              empty_strが空です。<br>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
