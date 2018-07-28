@@ -25,7 +25,10 @@ urlpatterns = [
     url(r'^login/', manager_view.CustomLoginView.as_view()),
     url(r'^logout/', manager_view.logout_view),
     url(r'^worker_list/', login_required(manager_view.WorkerListView.as_view())),
+    url(r'^manager_inf/', include(('manager.urls','manager'),)),
 #    url(r'^hijack/', include('hijack.urls')),
+    url(r'^crud/', include(('crud.urls','crud'),)),  # 追加する
+    url(r'^guestboard/', include(('guestboard.urls','guestboard'),)), 
 ]
 
 if settings.DEBUG:
