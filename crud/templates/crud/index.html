@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Worker List{% endblock %}
+{% load staticfiles %}
+
+  {% block body %}
+  <div id="wrapper">
+    <div id="page-wrapper">
+      <div class="row">
+        <div class="col-lg-6 full-width margin-top-20percent" >
+          <div class="panel panel-default full-width">
+
+            <div class="panel-heading">
+              Edit Help
+            </div>
+            <div>
+              <a href="{% url 'crud:add' %}">登録画面へ</a>
+              <form method="post" action="{% url 'crud:delete' %}">
+                <table border="1">
+                  <thead>
+                    <tr>
+                      <th>　</th>
+                      <th>message</th>
+                      <th>created_at</th>
+                      <th>updated_at</th>
+                      <th>　</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {% for message in messages %}
+                      <tr>
+                        <td><input type="checkbox" name="delete_ids" value="{{ message.id }}"></td>
+                        <td>{{ message.message }}</td>
+                        <td>{{ message.created_at }}</td>
+                        <td>{{ message.updated_at }}</td>
+                        <td><a href="{% url 'crud:edit' message.id %}">更新画面へ</a></td>
+                      </tr>
+                    {% endfor %}
+                  </tbody>
+                </table>
+                {% csrf_token %}
+                <input type="submit" value="削除">
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
